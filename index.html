@@ -4,11 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAIGOVARDHAN_OS v2.0 | Boot Sequence</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap"
-    rel="stylesheet" />
+  <title>Saigovardhan R. Sasanapuri | AI & Full-Stack Engineer</title>
+  <link rel="icon" type="image/webp" href="portfolio_logo_favicon.webp">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -50,8 +47,13 @@
     <nav class="taskbar">
       <div class="taskbar-logo">
         <span class="logo-symbol">⬡</span>
-        <span class="logo-text">SGS_OS</span>
+        <span class="logo-text">SGR_OS</span>
       </div>
+      <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
       <div class="taskbar-nav" id="taskbarNav">
         <button class="nav-cmd active" data-section="boot" onclick="navigateTo('boot')">
           <span class="cmd-prefix">~/</span>boot
@@ -111,7 +113,7 @@
             </div>
             <div class="hero-uni">
               <span class="code-keyword">const</span> <span class="code-var">university</span> = <span
-                class="code-string">"VIT — CGPA: 8.95"</span>;
+                class="code-string">"VIT Chennai — CGPA: 8.98"</span>;
             </div>
             <div class="hero-closing">}</div>
             <div class="hero-actions">
@@ -121,6 +123,28 @@
               <button class="btn-secondary" onclick="navigateTo('contact')">
                 <span class="btn-icon">⌁</span> exec(contact)
               </button>
+            </div>
+            <div class="boot-socials-main">
+
+              <a href="https://linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/" target="_blank"
+                class="boot-social-link">
+
+                <svg class="social-logo" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.8V24h-5v-7.6c0-1.8 0-4.2-2.6-4.2s-3 2-3 4V24H8z" />
+                </svg>
+
+              </a>
+
+              <a href="https://github.com/saigovardhan1304" target="_blank" class="boot-social-link">
+
+                <svg class="social-logo" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.2 11.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.6-.8 1.6-.8.6-1 .1-1.7.1-1.7-2.6-.3-5.3-1.3-5.3-6a4.7 4.7 0 011.2-3.2 4.3 4.3 0 01.1-3.2s1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4 18 4.3 18 4.3a4.3 4.3 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.7-2.7 5.7-5.3 6 .1.1.3.4.3.9v3c0 .3.2.7.8.6A12 12 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+
+              </a>
+
             </div>
           </div>
           <div class="hero-right">
@@ -140,12 +164,22 @@
                     0m</span></div>
                 <div class="stat-row"><span class="stat-label">KERNEL:</span><span class="stat-val">VIT_CS_CORE</span>
                 </div>
-                <div class="stat-row"><span class="stat-label">RAM:</span><span class="stat-val">8.95/10
+                <div class="stat-row"><span class="stat-label">RAM:</span><span class="stat-val">8.98/10
                     GPA_UNITS</span></div>
                 <div class="stat-row"><span class="stat-label">THREADS:</span><span class="stat-val">Leetcode | CF |
                     CC</span></div>
                 <div class="stat-row"><span class="stat-label">NETWORK:</span><span class="stat-val blink-txt">●
                     CONNECTED</span></div>
+
+                <div class="bios-post">
+                  <div class="bios-logo-text">SYSTEM_IDENTITY_SUMMARY</div>
+                  <div class="bios-line"> Saigovardhan: AI & Full-Stack Engineer</div>
+                  <div class="bios-line"> Specializing in high-performance web systems</div>
+                  <div class="bios-line"> Designing aesthetic and interactive UI</div>
+                  <div class="bios-line"> PROCESOR: Intel Core i9-13900K @ 5.80GHz</div>
+                  <div class="bios-line"> POST : 0xAA (SYSTEM_HEALTH: NOMINAL)</div>
+                </div>
+
                 <div class="cpu-graph-label">CPU ACTIVITY</div>
                 <div class="cpu-graph">
                   <canvas id="cpuCanvas" width="260" height="60"></canvas>
@@ -173,7 +207,7 @@
             <div class="terminal-window">
               <div class="terminal-header">
                 <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
-                <span class="t-title">about_.sh</span>
+                <span class="t-title">about_process.sh</span>
               </div>
               <div class="terminal-body">
                 <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat about.json</span></div>
@@ -187,29 +221,39 @@
                 <div class="card-icon">🎓</div>
                 <div class="card-title">Education</div>
                 <div class="card-body">Vellore Institute of Technology<br><span class="card-highlight">BTech CSE • CGPA
-                    8.95</span><br><span class="card-sub">2022 – 2026</span></div>
+                    8.98</span><br><span class="card-sub">2022 – 2026</span></div>
               </div>
               <div class="about-card">
                 <div class="card-icon">🏆</div>
                 <div class="card-title">Certifications</div>
                 <div class="card-body">
-                  <div class="cert-badge">Azure AI Engineer (AI-102)</div>
-                  <div class="cert-badge">Full-Stack Web Dev</div>
-                  <div class="cert-badge">JP Morgan Simulation</div>
-                  <div class="cert-badge">Cyber Security</div>
+                  <p class="click-hint">[Click to view certificate]</p>
+                  <a href="https://drive.google.com/file/d/1D_EAa0eXWX1fYXBqVHByxvOJs_G8vGz1/view?usp=sharing"
+                    target="_blank" class="cert-badge">Azure AI Engineer (AI-102)</a>
+                  <a href="https://drive.google.com/file/d/1RkSOm466l3WVUhMmeW1XEr_xwv5IM0AK/view?usp=sharing"
+                    target="_blank" class="cert-badge">Full-Stack Web Dev</a>
+                  <a href="https://drive.google.com/file/d/11wRPDHc2VX7GIjCBW23s0o_iPkFWDj2i/view?usp=sharing"
+                    target="_blank" class="cert-badge">JP Morgan Simulation</a>
+                  <a href="https://drive.google.com/file/d/1uGRF0bC_EPkEQKeqB2_cWJiLe2YStq5P/view?usp=sharing"
+                    target="_blank" class="cert-badge">Cyber Security</a>
                 </div>
               </div>
               <div class="about-card">
                 <div class="card-icon">⚡</div>
                 <div class="card-title">Competitive</div>
                 <div class="card-body">
-                  <div class="comp-row"><span class="comp-name">LeetCode</span><span class="comp-badge">Active</span>
-                  </div>
-                  <div class="comp-row"><span class="comp-name">CodeForces</span><span class="comp-badge">Active</span>
-                  </div>
-                  <div class="comp-row"><span class="comp-name">CodeChef</span><span class="comp-badge">Active</span>
-                  </div>
-                  <div class="comp-row"><span class="comp-name">Kaggle</span><span class="comp-badge">Top 5</span></div>
+                  <p class="click-hint">[Click to view profile]</p>
+                  <a href="https://leetcode.com/saigovardhan2004" target="_blank" class="comp-row"><span
+                      class="comp-name">LeetCode</span><span class="comp-badge active">Active</span>
+                  </a>
+                  <a href="https://codeforces.com/profile/saigovardhan_1304" target="_blank" class="comp-row"><span
+                      class="comp-name">CodeForces</span><span class="comp-badge active">Active</span>
+                  </a>
+                  <a href="https://www.codechef.com/users/saigovardhan13" target="_blank" class="comp-row"><span
+                      class="comp-name">CodeChef</span><span class="comp-badge">Active</span>
+                  </a>
+                  <a href="https://www.kaggle.com/saigovardhan123" target="_blank" class="comp-row"><span
+                      class="comp-name">Kaggle</span><span class="comp-badge">Top 5</span></a>
                 </div>
               </div>
             </div>
@@ -348,6 +392,16 @@
               <span class="skill-pct">85%</span>
             </div>
           </div>
+
+          <div class="skill-rec-container">
+            <div class="rec-header">// RECOMMEND_NEW_SKILL</div>
+            <p class="rec-desc">Is there a technology Saigovardhan should explore? Submit it below.</p>
+            <div class="rec-input-group">
+              <input type="text" id="skillRecInput" placeholder="e.g. Rust, Go, Kubernetes..." maxlength="30" />
+              <button class="win-btn" onclick="saveSkillRecommendation()">SUBMIT</button>
+            </div>
+            <div id="recStatus" class="rec-status"></div>
+          </div>
         </div>
       </section>
 
@@ -376,7 +430,8 @@
               <span class="tag">Full-Stack</span><span class="tag">MVC</span><span class="tag">REST API</span>
             </div>
             <div class="proj-footer">
-              <span class="proj-cmd">$ ./deploy --live</span>
+              <a href="https://github.com/saigovardhan1304/Tuition-Classes" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ ./view --repo</a>
               <span class="proj-arrow">→</span>
             </div>
           </div>
@@ -414,12 +469,53 @@
               <span class="tag">Data Science</span><span class="tag">Streamlit</span><span class="tag">NLP</span>
             </div>
             <div class="proj-footer">
-              <span class="proj-cmd">$ ./deploy --live</span>
+              <a href="https://whatsappconvoanalyser.streamlit.app/" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ ./view --live</a>
               <span class="proj-arrow">→</span>
             </div>
           </div>
 
-          <div class="project-card hackathon-card" onclick="openProjectTerminal(3)">
+          <div class="project-card" onclick="openProjectTerminal(3)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::SEC</span>
+              <span class="proj-status running">● ACTIVE</span>
+            </div>
+            <div class="proj-name">/tea-encryption</div>
+            <div class="proj-tech">C++ | Cryptography | Security</div>
+            <div class="proj-desc">Modified Tiny Encryption Algorithm (TEA) for enhanced protection in embedded systems
+              with optimized security cycles.</div>
+            <div class="proj-tags">
+              <span class="tag">Security</span><span class="tag">C++</span><span class="tag">MPMC</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/saigovardhan1304/MPMC-Modified-TEA-Encryption-Algorithm-Project"
+                target="_blank" class="proj-cmd" onclick="event.stopPropagation()">$ ./view --repo</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openProjectTerminal(4)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::RES</span>
+              <span class="proj-status running">● COMPLETED</span>
+            </div>
+            <div class="proj-name">/lung-cancer-research</div>
+            <div class="proj-tech">TensorFlow | Deep Learning | 3D CT</div>
+            <div class="proj-desc">Advanced research on 3D CT image segmentation for accurate and fast diagnostic
+              accuracy in lung cancer detection.</div>
+            <div class="proj-tags">
+              <span class="tag">Research</span><span class="tag">TensorFlow</span><span class="tag">Health IT</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://drive.google.com/file/d/1rxuyzKkq8X4A0_2WbYISYUTTbn2fg1vT/view" target="_blank"
+                class="proj-cmd" onclick="event.stopPropagation()">$ cat research.pd</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card hackathon-card" onclick="openProjectTerminal(5)">
             <div class="proj-terminal-header">
               <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
               <span class="proj-pid">HACKATHON</span>
@@ -433,7 +529,8 @@
               <span class="tag">Cryptography</span><span class="tag">Security</span><span class="tag">Healthcare</span>
             </div>
             <div class="proj-footer">
-              <span class="proj-cmd">$ cat README.md</span>
+              <a href="https://github.com/saigovardhan1304/Medithon_Medicos/tree/copy" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ cat README.md</a>
               <span class="proj-arrow">→</span>
             </div>
           </div>
@@ -555,10 +652,6 @@
                 <span class="cinfo-val">saigovardhan1304@gmail.com</span>
               </div>
               <div class="cinfo-row">
-                <span class="cinfo-key">PHONE</span>
-                <span class="cinfo-val">+91 9689820429</span>
-              </div>
-              <div class="cinfo-row">
                 <span class="cinfo-key">LOCATION</span>
                 <span class="cinfo-val">Pune, India</span>
               </div>
@@ -567,10 +660,12 @@
                 <span class="cinfo-val blink-txt">● Open to Opportunities</span>
               </div>
               <div class="social-links">
-                <a href="#" class="social-btn">LinkedIn</a>
-                <a href="#" class="social-btn">GitHub</a>
-                <a href="#" class="social-btn">Portfolio</a>
-                <a href="#" class="social-btn">Kaggle</a>
+                <p class="social-hint">Click to view profile:</p>
+                <a href="https://www.linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/" target="_blank"
+                  class="social-btn">LinkedIn</a>
+                <a href="https://github.com/saigovardhan1304" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://www.kaggle.com/saigovardhan123" target="_blank" class="social-btn">Kaggle</a>
+                <a href="https://leetcode.com/saigovardhan2004" target="_blank" class="social-btn">LeetCode</a>
               </div>
             </div>
           </div>
@@ -582,15 +677,17 @@
 
   <!-- CLI Terminal -->
   <div class="cli-window" id="cliWindow">
-    <div class="cli-header">
-      <span class="t-dot red" onclick="closeCli()"></span>
-      <span class="t-dot yellow"></span>
-      <span class="t-dot green" onclick="minimizeCli()"></span>
-      <span class="cli-title">terminal — saigovardhan@os:~$</span>
+    <div class="window-header">
+      <div class="win-controls">
+        <span class="t-dot red" onclick="closeCli()" title="Close"></span>
+        <span class="t-dot yellow" onclick="toggleCli()" title="Minimize"></span>
+        <span class="t-dot green" title="Maximize"></span>
+      </div>
+      <span class="win-title">Govardhan_Runtime_Environment — v2.4.0</span>
     </div>
     <div class="cli-body" id="cliBody">
       <div class="cli-output" id="cliOutput">
-        <div class="cli-welcome">Saigovardhan_OS Terminal v2.0 — Type <span class="highlight">help</span> for commands
+        <div class="cli-welcome">Saigovardhan_OS GRE v2.0 — Type <span class="highlight">help</span> for commands
         </div>
       </div>
       <div class="cli-input-row">
@@ -600,26 +697,25 @@
     </div>
   </div>
   <button class="cli-toggle" id="cliToggle" onclick="toggleCli()">
-    <span>⌨</span> Terminal
+    <span>⌨</span> GRE
   </button>
 
   <!-- AI Chatbot -->
   <div class="chatbot-window" id="chatbotWindow">
-    <div class="chatbot-header">
-      <span class="t-dot red" onclick="closeChatbot()"></span>
-      <span class="t-dot yellow"></span>
-      <span class="t-dot green"></span>
-      <span class="chatbot-title">
-        <span class="bot-icon">⬡</span> JARVIS_AI — Portfolio Assistant
-      </span>
-      <span class="bot-status">● ONLINE</span>
+    <div class="window-header">
+      <div class="win-controls">
+        <span class="t-dot red" onclick="closeChatbot()" title="Close"></span>
+        <span class="t-dot yellow" onclick="toggleChatbot()" title="Minimize"></span>
+        <span class="t-dot green" title="Maximize"></span>
+      </div>
+      <span class="win-title">SAI-BOT — v1.0.1</span>
     </div>
     <div class="chatbot-body" id="chatbotBody">
       <div class="chat-messages" id="chatMessages">
         <div class="bot-message">
           <span class="bot-avatar">⬡</span>
           <div class="bot-bubble">
-            Greetings. I am JARVIS — Saigovardhan's AI assistant.<br>
+            Greetings. I am SAI-BOT — Saigovardhan's AI assistant.<br>
             Ask me anything about his skills, experience, or projects.<br><br>
             <span class="bot-hint">Try: "What are his skills?" or "Tell me about his projects"</span>
           </div>
@@ -632,7 +728,7 @@
     </div>
   </div>
   <button class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
-    <span class="bot-pulse">⬡</span> JARVIS
+    <span class="bot-pulse">⬡</span> SAI-BOT
   </button>
 
   <!-- Project Detail Modal -->
@@ -653,6 +749,7 @@
     <span id="musicIcon">♪</span>
   </button>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 
