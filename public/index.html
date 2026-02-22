@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saigovardhan R. Sasanapuri | AI & Full-Stack Engineer</title>
+  <link rel="icon" type="image/webp" href="portfolio_logo_favicon.webp">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Boot Screen -->
+  <div class="boot-screen" id="bootScreen">
+    <div class="boot-content">
+      <div class="boot-logo">
+        <span class="boot-bracket">[</span>
+        <span class="boot-name">SAIGOVARDHAN_OS</span>
+        <span class="boot-bracket">]</span>
+      </div>
+      <div class="boot-version">v2.0.26 — Kernel: DEV_CORE_X</div>
+      <div class="boot-log" id="bootLog"></div>
+      <div class="boot-progress-bar">
+        <div class="boot-progress-fill" id="bootFill"></div>
+        <div class="boot-progress-text" id="bootPercent">0%</div>
+      </div>
+      <div class="boot-status" id="bootStatus">INITIALIZING SYSTEM...</div>
+    </div>
+  </div>
+
+  <!-- Main OS Interface -->
+  <div class="os-container" id="osContainer" style="display:none">
+
+    <!-- Taskbar -->
+    <nav class="taskbar">
+      <div class="taskbar-logo">
+        <span class="logo-symbol">⬡</span>
+        <span class="logo-text">SGR_OS</span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="taskbar-nav" id="taskbarNav">
+        <button class="nav-cmd active" data-section="boot" onclick="navigateTo('boot')">
+          <span class="cmd-prefix">~/</span>boot
+        </button>
+        <button class="nav-cmd" data-section="init" onclick="navigateTo('init')">
+          <span class="cmd-prefix">./</span>init
+        </button>
+        <button class="nav-cmd" data-section="skills" onclick="navigateTo('skills')">
+          <span class="cmd-prefix">#include&lt;</span>skills<span class="cmd-prefix">&gt;</span>
+        </button>
+        <button class="nav-cmd" data-section="projects" onclick="navigateTo('projects')">
+          <span class="cmd-prefix">deploy</span> projects
+        </button>
+        <button class="nav-cmd" data-section="experience" onclick="navigateTo('experience')">
+          <span class="cmd-prefix">$ </span>sys.logs
+        </button>
+        <button class="nav-cmd" data-section="contact" onclick="navigateTo('contact')">
+          <span class="cmd-prefix">exec</span>(contact)
+        </button>
+      </div>
+      <div class="taskbar-status">
+        <span class="status-dot"></span>
+        <span class="status-text" id="systemTime">00:00:00</span>
+        <span class="status-ping">ONLINE</span>
+      </div>
+    </nav>
+
+    <!-- Compile Animation Overlay -->
+    <div class="compile-overlay" id="compileOverlay">
+      <div class="compile-text" id="compileText"></div>
+    </div>
+
+    <!-- Sections Wrapper -->
+    <div class="sections-wrapper">
+
+      <!-- /boot — Hero -->
+      <section class="section active" id="section-boot">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: BOOT_SEQUENCE</span>
+          <span class="sec-file">main.cpp — line 1</span>
+        </div>
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="greeting-line">
+              <span class="code-keyword">int</span> <span class="code-fn">main</span>() {
+            </div>
+            <div class="hero-name-wrapper">
+              <div class="hero-prefix">printf("<span class="hero-name-text" id="heroName"></span>");</div>
+            </div>
+            <div class="hero-role-wrapper">
+              <span class="code-comment">// Role: </span>
+              <span class="hero-role" id="heroRole"></span>
+            </div>
+            <div class="hero-location">
+              <span class="code-keyword">const</span> <span class="code-var">location</span> = <span
+                class="code-string">"Pune, India"</span>;
+            </div>
+            <div class="hero-uni">
+              <span class="code-keyword">const</span> <span class="code-var">university</span> = <span
+                class="code-string">"VIT Chennai — CGPA: 8.98"</span>;
+            </div>
+            <div class="hero-closing">}</div>
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="navigateTo('projects')">
+                <span class="btn-icon">▶</span> deploy --projects
+              </button>
+              <button class="btn-secondary" onclick="navigateTo('contact')">
+                <span class="btn-icon">⌁</span> exec(contact)
+              </button>
+            </div>
+            <div class="boot-socials-main">
+
+              <a href="https://linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/" target="_blank"
+                class="boot-social-link">
+
+                <svg class="social-logo" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.8V24h-5v-7.6c0-1.8 0-4.2-2.6-4.2s-3 2-3 4V24H8z" />
+                </svg>
+
+              </a>
+
+              <a href="https://github.com/saigovardhan1304" target="_blank" class="boot-social-link">
+
+                <svg class="social-logo" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.2 11.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.6-.8 1.6-.8.6-1 .1-1.7.1-1.7-2.6-.3-5.3-1.3-5.3-6a4.7 4.7 0 011.2-3.2 4.3 4.3 0 01.1-3.2s1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4 18 4.3 18 4.3a4.3 4.3 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.7-2.7 5.7-5.3 6 .1.1.3.4.3.9v3c0 .3.2.7.8.6A12 12 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+
+              </a>
+
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="system-monitor">
+              <div class="monitor-header">
+                <span class="monitor-dot red"></span>
+                <span class="monitor-dot yellow"></span>
+                <span class="monitor-dot green"></span>
+                <span class="monitor-title">system_stats.exe</span>
+              </div>
+              <div class="monitor-body">
+                <div class="stat-row"><span class="stat-label">PROCESS:</span><span
+                    class="stat-val pulse">Saigovardhan_OS</span></div>
+                <div class="stat-row"><span class="stat-label">STATUS:</span><span class="stat-val green-txt">●
+                    RUNNING</span></div>
+                <div class="stat-row"><span class="stat-label">UPTIME:</span><span class="stat-val" id="uptime">0d 0h
+                    0m</span></div>
+                <div class="stat-row"><span class="stat-label">KERNEL:</span><span class="stat-val">VIT_CS_CORE</span>
+                </div>
+                <div class="stat-row"><span class="stat-label">RAM:</span><span class="stat-val">8.98/10
+                    GPA_UNITS</span></div>
+                <div class="stat-row"><span class="stat-label">THREADS:</span><span class="stat-val">Leetcode | CF |
+                    CC</span></div>
+                <div class="stat-row"><span class="stat-label">NETWORK:</span><span class="stat-val blink-txt">●
+                    CONNECTED</span></div>
+
+                <div class="bios-post">
+                  <div class="bios-logo-text">SYSTEM_IDENTITY_SUMMARY</div>
+                  <div class="bios-line"> Saigovardhan: AI & Full-Stack Engineer</div>
+                  <div class="bios-line"> Specializing in high-performance web systems</div>
+                  <div class="bios-line"> Designing aesthetic and interactive UI</div>
+                  <div class="bios-line"> PROCESOR: Intel Core i9-13900K @ 5.80GHz</div>
+                  <div class="bios-line"> POST : 0xAA (SYSTEM_HEALTH: NOMINAL)</div>
+                </div>
+
+                <div class="cpu-graph-label">CPU ACTIVITY</div>
+                <div class="cpu-graph">
+                  <canvas id="cpuCanvas" width="260" height="60"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating terminal command hint -->
+        <div class="cmd-hint">
+          <span class="hint-icon">⌨</span> Try the terminal: <code>help</code> | <code>show skills</code> |
+          <code>open projects</code>
+        </div>
+      </section>
+
+      <!-- /init — About -->
+      <section class="section" id="section-init">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: INIT_SEQUENCE — About Process</span>
+          <span class="sec-file">about.h — line 12</span>
+        </div>
+        <div class="init-layout">
+          <div class="init-left">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+                <span class="t-title">about_process.sh</span>
+              </div>
+              <div class="terminal-body">
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat about.json</span></div>
+                <div class="t-output t-json" id="aboutJson"></div>
+              </div>
+            </div>
+          </div>
+          <div class="init-right">
+            <div class="about-cards">
+              <div class="about-card">
+                <div class="card-icon">🎓</div>
+                <div class="card-title">Education</div>
+                <div class="card-body">Vellore Institute of Technology<br><span class="card-highlight">BTech CSE • CGPA
+                    8.98</span><br><span class="card-sub">2022 – 2026</span></div>
+              </div>
+              <div class="about-card">
+                <div class="card-icon">🏆</div>
+                <div class="card-title">Certifications</div>
+                <div class="card-body">
+                  <p class="click-hint">[Click to view certificate]</p>
+                  <a href="https://drive.google.com/file/d/1D_EAa0eXWX1fYXBqVHByxvOJs_G8vGz1/view?usp=sharing"
+                    target="_blank" class="cert-badge">Azure AI Engineer (AI-102)</a>
+                  <a href="https://drive.google.com/file/d/1RkSOm466l3WVUhMmeW1XEr_xwv5IM0AK/view?usp=sharing"
+                    target="_blank" class="cert-badge">Full-Stack Web Dev</a>
+                  <a href="https://drive.google.com/file/d/11wRPDHc2VX7GIjCBW23s0o_iPkFWDj2i/view?usp=sharing"
+                    target="_blank" class="cert-badge">JP Morgan Simulation</a>
+                  <a href="https://drive.google.com/file/d/1uGRF0bC_EPkEQKeqB2_cWJiLe2YStq5P/view?usp=sharing"
+                    target="_blank" class="cert-badge">Cyber Security</a>
+                </div>
+              </div>
+              <div class="about-card">
+                <div class="card-icon">⚡</div>
+                <div class="card-title">Competitive</div>
+                <div class="card-body">
+                  <p class="click-hint">[Click to view profile]</p>
+                  <a href="https://leetcode.com/saigovardhan2004" target="_blank" class="comp-row"><span
+                      class="comp-name">LeetCode</span><span class="comp-badge active">Active</span>
+                  </a>
+                  <a href="https://codeforces.com/profile/saigovardhan_1304" target="_blank" class="comp-row"><span
+                      class="comp-name">CodeForces</span><span class="comp-badge active">Active</span>
+                  </a>
+                  <a href="https://www.codechef.com/users/saigovardhan13" target="_blank" class="comp-row"><span
+                      class="comp-name">CodeChef</span><span class="comp-badge">Active</span>
+                  </a>
+                  <a href="https://www.kaggle.com/saigovardhan123" target="_blank" class="comp-row"><span
+                      class="comp-name">Kaggle</span><span class="comp-badge">Top 5</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- #include <skills> -->
+      <section class="section" id="section-skills">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: SKILLS_LOADER</span>
+          <span class="sec-file">skills.h — line 48</span>
+        </div>
+        <div class="skills-include-line">
+          <span class="code-keyword">#include</span> <span class="code-string">&lt;skills.h&gt;</span>
+          <span class="sec-comment"> // Loading dependencies...</span>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="cat-bracket">{</span> Languages <span class="cat-bracket">}</span>
+            </div>
+            <div class="skill-item" data-level="88">
+              <span class="skill-name">C++</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="88"></div>
+              </div>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-item" data-level="82">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="82"></div>
+              </div>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-item" data-level="85">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="85"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-item" data-level="80">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-item" data-level="87">
+              <span class="skill-name">C# / .NET</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="87"></div>
+              </div>
+              <span class="skill-pct">87%</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="cat-bracket">{</span> Technologies <span class="cat-bracket">}</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Azure AI</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="90"></div>
+              </div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">ASP.NET Core</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="85"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Frontend Dev</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="88"></div>
+              </div>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Machine Learning</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="78"></div>
+              </div>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Figma / UI/UX</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="83"></div>
+              </div>
+              <span class="skill-pct">83%</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="cat-bracket">{</span> Tools & Platforms <span class="cat-bracket">}</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="75"></div>
+              </div>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Power BI</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="72"></div>
+              </div>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Oracle SQL</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Flask / Streamlit</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="76"></div>
+              </div>
+              <span class="skill-pct">76%</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Git / GitHub</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar-fill" data-pct="85"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+          </div>
+
+          <div class="skill-rec-container">
+            <div class="rec-header">// RECOMMEND_NEW_SKILL</div>
+            <p class="rec-desc">Is there a technology Saigovardhan should explore? Submit it below.</p>
+            <div class="rec-input-group">
+              <input type="text" id="skillRecInput" placeholder="e.g. Rust, Go, Kubernetes..." maxlength="30" />
+              <button class="win-btn" onclick="saveSkillRecommendation()">SUBMIT</button>
+            </div>
+            <div id="recStatus" class="rec-status"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- /deploy projects -->
+      <section class="section" id="section-projects">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: PROJECT_DEPLOYER</span>
+          <span class="sec-file">projects.cpp — line 99</span>
+        </div>
+        <div class="deploy-line">
+          <span class="code-fn">system</span>.out.println(<span class="code-string">"Projects Loaded"</span>);
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card" onclick="openProjectTerminal(0)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::001</span>
+              <span class="proj-status running">● RUNNING</span>
+            </div>
+            <div class="proj-name">/tuition-platform</div>
+            <div class="proj-tech">.NET | ASP.NET Core | C# | SQL Server</div>
+            <div class="proj-desc">Full-stack educational platform with RESTful APIs, MVC architecture, and
+              comprehensive student management features.</div>
+            <div class="proj-tags">
+              <span class="tag">Full-Stack</span><span class="tag">MVC</span><span class="tag">REST API</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/saigovardhan1304/Tuition-Classes" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ ./view --repo</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openProjectTerminal(1)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::002</span>
+              <span class="proj-status running">● RUNNING</span>
+            </div>
+            <div class="proj-name">/speech-ai-analyzer</div>
+            <div class="proj-tech">Whisper | spaCy | Python | Flask | TTS</div>
+            <div class="proj-desc">AI-powered speech analysis app with fluency analysis, grammar checks, and interactive
+              speech games using Text-to-Speech integration.</div>
+            <div class="proj-tags">
+              <span class="tag">AI/ML</span><span class="tag">NLP</span><span class="tag">Python</span>
+            </div>
+            <div class="proj-footer">
+              <span class="proj-cmd">$ ./deploy --live</span>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openProjectTerminal(2)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::003</span>
+              <span class="proj-status running">● RUNNING</span>
+            </div>
+            <div class="proj-name">/whatsapp-analyzer</div>
+            <div class="proj-tech">Python | Streamlit | NLP | Data Viz</div>
+            <div class="proj-desc">Dynamic web app enabling users to upload and analyze WhatsApp chats for sentiment
+              analysis, user activity metrics, and behavioral insights.</div>
+            <div class="proj-tags">
+              <span class="tag">Data Science</span><span class="tag">Streamlit</span><span class="tag">NLP</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://whatsappconvoanalyser.streamlit.app/" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ ./view --live</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openProjectTerminal(3)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::SEC</span>
+              <span class="proj-status running">● ACTIVE</span>
+            </div>
+            <div class="proj-name">/tea-encryption</div>
+            <div class="proj-tech">C++ | Cryptography | Security</div>
+            <div class="proj-desc">Modified Tiny Encryption Algorithm (TEA) for enhanced protection in embedded systems
+              with optimized security cycles.</div>
+            <div class="proj-tags">
+              <span class="tag">Security</span><span class="tag">C++</span><span class="tag">MPMC</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/saigovardhan1304/MPMC-Modified-TEA-Encryption-Algorithm-Project"
+                target="_blank" class="proj-cmd" onclick="event.stopPropagation()">$ ./view --repo</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openProjectTerminal(4)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">PID::RES</span>
+              <span class="proj-status running">● COMPLETED</span>
+            </div>
+            <div class="proj-name">/lung-cancer-research</div>
+            <div class="proj-tech">TensorFlow | Deep Learning | 3D CT</div>
+            <div class="proj-desc">Advanced research on 3D CT image segmentation for accurate and fast diagnostic
+              accuracy in lung cancer detection.</div>
+            <div class="proj-tags">
+              <span class="tag">Research</span><span class="tag">TensorFlow</span><span class="tag">Health IT</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://drive.google.com/file/d/1rxuyzKkq8X4A0_2WbYISYUTTbn2fg1vT/view" target="_blank"
+                class="proj-cmd" onclick="event.stopPropagation()">$ cat research.pd</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="project-card hackathon-card" onclick="openProjectTerminal(5)">
+            <div class="proj-terminal-header">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="proj-pid">HACKATHON</span>
+              <span class="proj-status award">★ AWARDED</span>
+            </div>
+            <div class="proj-name">/medi-thon-file-system</div>
+            <div class="proj-tech">Cryptography | Web Dev | Encryption</div>
+            <div class="proj-desc">Hospital File Transfer System using cryptographic techniques for secure medical
+              record transfer between hospital departments.</div>
+            <div class="proj-tags">
+              <span class="tag">Cryptography</span><span class="tag">Security</span><span class="tag">Healthcare</span>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/saigovardhan1304/Medithon_Medicos/tree/copy" target="_blank" class="proj-cmd"
+                onclick="event.stopPropagation()">$ cat README.md</a>
+              <span class="proj-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- $ sys.logs — Experience -->
+      <section class="section" id="section-experience">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: SYSTEM_LOGS — Experience Timeline</span>
+          <span class="sec-file">syslog.txt — line 200</span>
+        </div>
+        <div class="syslog-line">
+          <span class="code-keyword">const</span> <span class="code-var">experience</span> = [<span
+            class="code-comment"> /* loading logs... */</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-connector"></div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">Sept 2025 — Present</div>
+            <div class="log-card">
+              <div class="log-level info">INFO</div>
+              <div class="log-company">Connex AI <span class="log-location">• USA Remote</span></div>
+              <div class="log-role">Frontend Developer & UX Designer Intern</div>
+              <div class="log-detail">Building AI-driven healthcare applications as a Remote UX Designer and Frontend
+                Developer. Responsibilities include Figma UI/UX design and frontend development for production
+                healthcare systems.</div>
+              <div class="log-stack">
+                <span class="stack-tag">Figma</span><span class="stack-tag">Frontend</span><span class="stack-tag">AI
+                  Healthcare</span><span class="stack-tag">UX Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">May 2025 — June 2025</div>
+            <div class="log-card">
+              <div class="log-level success">SUCCESS</div>
+              <div class="log-company">ThinkSmart Systems Pvt. Ltd. <span class="log-location">• Pune, Onsite</span>
+              </div>
+              <div class="log-role">Software Developer Intern</div>
+              <div class="log-detail">Developed RESTful APIs using ASP.NET Core. Integrated frontend with backend using
+                C#, HTML/CSS, and Oracle SQL Server following MVC architecture patterns.</div>
+              <div class="log-stack">
+                <span class="stack-tag">ASP.NET Core</span><span class="stack-tag">C#</span><span
+                  class="stack-tag">Oracle SQL</span><span class="stack-tag">MVC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="log-entry hackathon-entry">
+            <div class="log-timestamp">2024</div>
+            <div class="log-card">
+              <div class="log-level warn">HACKATHON</div>
+              <div class="log-company">Multiple Competitions</div>
+              <div class="log-role">Top 5 @ Kaggle ML Contest | 4th Place @ UI/UX Designathon</div>
+              <div class="log-detail">Secured top 5 in Kaggle ML contest among 70+ teams (IEEE Mission: Data
+                Impossible). Secured 4th place in 3-day UI/UX Designathon among 30+ teams presenting Female Bus
+                Reservation solution.</div>
+              <div class="log-stack">
+                <span class="stack-tag">ML</span><span class="stack-tag">Figma</span><span
+                  class="stack-tag">Cryptography</span><span class="stack-tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="syslog-close">]; <span class="code-comment">// end experience array</span></div>
+      </section>
+
+      <!-- exec(contact) -->
+      <section class="section" id="section-contact">
+        <div class="section-header">
+          <span class="sec-comment">// MODULE: CONTACT_EXECUTOR</span>
+          <span class="sec-file">contact.js — line 7</span>
+        </div>
+        <div class="contact-line">
+          <span class="code-fn">execute</span>(<span class="code-string">"Contact"</span>);
+        </div>
+        <div class="contact-layout">
+          <div class="contact-left">
+            <div class="contact-terminal">
+              <div class="terminal-header">
+                <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+                <span class="t-title">send_message.sh</span>
+              </div>
+              <div class="terminal-body">
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">init_contact
+                    --protocol=EMAIL</span></div>
+                <div class="contact-form">
+                  <div class="form-field">
+                    <label class="form-label">// your_name:</label>
+                    <input type="text" id="contactName" class="form-input" placeholder="John_Doe" />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">// your_email:</label>
+                    <input type="email" id="contactEmail" class="form-input" placeholder="user@domain.com" />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">// message_payload:</label>
+                    <textarea id="contactMsg" class="form-input form-textarea"
+                      placeholder="Hello Saigovardhan, I want to..."></textarea>
+                  </div>
+                  <button class="btn-send" onclick="sendContact()">
+                    <span>▶▶</span> execute(send_message)
+                  </button>
+                  <div class="form-output" id="formOutput"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-right">
+            <div class="contact-info-panel">
+              <div class="cinfo-title">// Connection Endpoints</div>
+              <div class="cinfo-row">
+                <span class="cinfo-key">EMAIL</span>
+                <span class="cinfo-val">saigovardhan1304@gmail.com</span>
+              </div>
+              <div class="cinfo-row">
+                <span class="cinfo-key">LOCATION</span>
+                <span class="cinfo-val">Pune, India</span>
+              </div>
+              <div class="cinfo-row">
+                <span class="cinfo-key">STATUS</span>
+                <span class="cinfo-val blink-txt">● Open to Opportunities</span>
+              </div>
+              <div class="social-links">
+                <p class="social-hint">Click to view profile:</p>
+                <a href="https://www.linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/" target="_blank"
+                  class="social-btn">LinkedIn</a>
+                <a href="https://github.com/saigovardhan1304" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://www.kaggle.com/saigovardhan123" target="_blank" class="social-btn">Kaggle</a>
+                <a href="https://leetcode.com/saigovardhan2004" target="_blank" class="social-btn">LeetCode</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end sections-wrapper -->
+  </div><!-- end os-container -->
+
+  <!-- CLI Terminal -->
+  <div class="cli-window" id="cliWindow">
+    <div class="window-header">
+      <div class="win-controls">
+        <span class="t-dot red" onclick="closeCli()" title="Close"></span>
+        <span class="t-dot yellow" onclick="toggleCli()" title="Minimize"></span>
+        <span class="t-dot green" title="Maximize"></span>
+      </div>
+      <span class="win-title">Govardhan_Runtime_Environment — v2.4.0</span>
+    </div>
+    <div class="cli-body" id="cliBody">
+      <div class="cli-output" id="cliOutput">
+        <div class="cli-welcome">Saigovardhan_OS GRE v2.0 — Type <span class="highlight">help</span> for commands
+        </div>
+      </div>
+      <div class="cli-input-row">
+        <span class="cli-prompt">saigovardhan@os:~$</span>
+        <input type="text" id="cliInput" class="cli-input" placeholder="type a command..." autocomplete="off" />
+      </div>
+    </div>
+  </div>
+  <button class="cli-toggle" id="cliToggle" onclick="toggleCli()">
+    <span>⌨</span> GRE
+  </button>
+
+  <!-- AI Chatbot -->
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="window-header">
+      <div class="win-controls">
+        <span class="t-dot red" onclick="closeChatbot()" title="Close"></span>
+        <span class="t-dot yellow" onclick="toggleChatbot()" title="Minimize"></span>
+        <span class="t-dot green" title="Maximize"></span>
+      </div>
+      <span class="win-title">SAI-BOT — v1.0.1</span>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chat-messages" id="chatMessages">
+        <div class="bot-message">
+          <span class="bot-avatar">⬡</span>
+          <div class="bot-bubble">
+            Greetings. I am SAI-BOT — Saigovardhan's AI assistant.<br>
+            Ask me anything about his skills, experience, or projects.<br><br>
+            <span class="bot-hint">Try: "What are his skills?" or "Tell me about his projects"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chatbot-input-row">
+      <input type="text" id="chatInput" class="chat-input" placeholder="Query the AI..." />
+      <button class="chat-send" onclick="sendChatMessage()">▶</button>
+    </div>
+  </div>
+  <button class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    <span class="bot-pulse">⬡</span> SAI-BOT
+  </button>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal" onclick="closeModal()">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="t-dot red" onclick="closeModal()"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="modal-title" id="modalTitle">project_detail.md</span>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+    <span id="musicIcon">♪</span>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
