@@ -39,7 +39,7 @@ SOCIAL LINKS: LinkedIn (https://linkedin.com/in/saigovardhan-sasanapuri-8ab02b25
 EDUCATION:
 - Vellore Institute of Technology (Chennai)
 - BTech in Computer Science Core
-- CGPA: 8.98/10
+- CGPA: 9.02/10
 - Duration: September 2022 – July 2026
 
 EXPERIENCE:
@@ -139,7 +139,7 @@ function getFallbackResponse(query) {
   if (q.includes("contact") || q.includes("email"))
     return "Email: saigovardhan1304@gmail.com | Phone: +91 9689820429 | Pune, India";
   if (q.includes("educat") || q.includes("vit") || q.includes("cgpa"))
-    return "VIT Vellore — BTech CSE, CGPA: 8.95, graduating 2026.";
+    return "VIT Vellore — BTech CSE, CGPA: 9.02, graduating 2026.";
   return "I am JARVIS, Saigovardhan's portfolio AI. Ask about his skills, projects, experience, or certifications.";
 }
 
