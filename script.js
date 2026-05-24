@@ -16,7 +16,7 @@ const RESUME = {
   location: "Pune, India",
   university: "Vellore Institute Of Technology",
   degree: "BTech CSE",
-  cgpa: "8.95",
+  cgpa: "9.02",
   duration: "2022–2026",
   roles: ["Full-Stack Developer", "AI Engineer", "UI/UX Designer", "Azure Certified", "Competitive Programmer"],
   skills: {
