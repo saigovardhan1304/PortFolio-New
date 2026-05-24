@@ -29,9 +29,12 @@ const RESUME = {
     { company: "ThinkSmart Systems Pvt. Ltd.", role: "Software Developer Intern", period: "May 2025 – June 2025", desc: "Built RESTful APIs with ASP.NET Core. Integrated frontend/backend using C#, HTML/CSS, Oracle SQL, MVC.", stack: ["ASP.NET Core", "C#", "Oracle SQL"] }
   ],
   projects: [
+    { name: "TrafficAI Enforcement System", pid: "000", tech: "YOLOv8 | OpenCV | OCR | Python | Full-Stack", desc: "Real-time motorcycle traffic enforcement with helmet, triple-riding, and mobile phone violation detection, automated challans, and admin monitoring." },
     { name: "Saigovardhan's Tuition Classes", pid: "001", tech: ".NET | ASP.NET Core | C# | SQL Server", desc: "Full-stack educational platform with RESTful APIs and MVC architecture." },
     { name: "AI Speech Analyzer", pid: "002", tech: "Whisper | spaCy | Python | Flask | TTS", desc: "AI-powered speech analysis with fluency, grammar checks, and TTS games." },
     { name: "WhatsApp Convo Analyser", pid: "003", tech: "Python | Streamlit | NLP", desc: "Analyze WhatsApp chats for sentiment, activity, and behavioral insights." },
+    { name: "TEA Encryption", pid: "SEC", tech: "C++ | Cryptography | Security", desc: "Modified Tiny Encryption Algorithm (TEA) for enhanced protection in embedded systems." },
+    { name: "Lung Cancer DL Research", pid: "RES", tech: "TensorFlow | 3D CT | Deep Learning", desc: "Advanced 3D CT image segmentation for lung cancer detection." },
     { name: "Medi-Thon Hospital File System", pid: "HACK", tech: "Cryptography | Web Dev | Encryption", desc: "Secure hospital file transfer system using cryptographic encryption/decryption." }
   ],
   certifications: ["Azure AI Engineer Associate (AI-102)", "Full-Stack Web Dev – Udemy", "JP Morgan Chase Simulation", "Cyber Security – LinkedIn"],
@@ -370,7 +373,7 @@ Available commands:
 
   whoami: () => `<div class="cli-response">
 uid=1304(saigovardhan) gid=vit(btechcse) groups=azure,dotnet,python,ml,uiux
-HOME=/portfolio  SHELL=/dev/brain  CGPA=8.95
+HOME=/portfolio  SHELL=/dev/brain  CGPA=9.02
 </div>`,
 
   about: () => `<div class="cli-response">
@@ -473,8 +476,8 @@ let chatbotOpen = false;
 const KNOWLEDGE = {
   skills: `Saigovardhan is skilled in C++, Java, Python, SQL, C#/.NET (languages), Azure AI, ASP.NET Core, Frontend Development, Machine Learning, Figma/UI/UX (technologies), and MongoDB, Power BI, Oracle SQL Server, Flask, Streamlit, Git/GitHub (tools).`,
   experience: `He has 2 internship experiences: (1) Frontend Developer & UX Designer at Connex AI, USA-Remote (Sept 2025–Present), building AI-driven healthcare apps with Figma and frontend dev. (2) Software Developer Intern at ThinkSmart Systems Pvt. Ltd., Pune (May 2025–June 2025), building RESTful APIs with ASP.NET Core, C#, and Oracle SQL.`,
-  projects: `He has 3 main projects: (1) Saigovardhan's Tuition Classes — full-stack .NET educational platform. (2) AI Speech Analyzer — uses Whisper, spaCy, Flask with fluency and grammar analysis. (3) WhatsApp Convo Analyser — Streamlit app for chat sentiment/activity. Plus a Hackathon project: Hospital File Transfer System using cryptography.`,
-  education: `He studies at Vellore Institute of Technology (VIT), pursuing BTech in Computer Science Core with a CGPA of 8.95, graduating in 2026.`,
+  projects: `He has multiple applied AI projects: (1) TrafficAI Enforcement System — real-time motorcycle violation detection with YOLOv8, OpenCV, OCR, automated challans, and admin monitoring. (2) Saigovardhan's Tuition Classes — full-stack .NET educational platform. (3) AI Speech Analyzer — uses Whisper, spaCy, Flask with fluency and grammar analysis. (4) WhatsApp Convo Analyser — Streamlit app for chat sentiment/activity. (5) TEA Encryption — modified cryptography research. (6) Lung Cancer DL Research — TensorFlow 3D CT segmentation. Plus a hackathon project: Medi-Thon Hospital File Transfer System.`,
+  education: `He studies at Vellore Institute of Technology (VIT), pursuing BTech in Computer Science Core with a CGPA of 9.02, graduating in 2026.`,
   certifications: `He holds: Microsoft Azure AI Engineer Associate (AI-102), Full-Stack Web Development (Udemy), JP Morgan Chase Software Engineering Simulation, and Cyber Security Threat Landscape (LinkedIn).`,
   contact: `Email: saigovardhan1304@gmail.com | Phone: +91 9689820429 | Location: Pune, India`,
   hackathons: `Top 5 in Kaggle ML contest (IEEE Mission: Data Impossible, 70+ teams), developed Medi-Thon Hospital File Transfer System, and secured 4th place in a UI/UX Designathon (30+ teams).`
@@ -509,7 +512,7 @@ function getJarvisResponse(query) {
     return `Hello, Developer. I am JARVIS — Saigovardhan's AI portfolio assistant.\n\nAsk me about his skills, projects, experience, education, or certifications. I'm fully trained on his resume data. How can I assist?`;
   }
   if (q.includes("who") || q.includes("about") || q.includes("saigovar")) {
-    return `**IDENTITY MODULE**\n\nSaigovardhan R. Sasanapuri is a Full-Stack Developer and AI Engineer from VIT Pune (CGPA 8.95). He specializes in .NET, Azure AI, Python, and UI/UX. Currently interning at Connex AI (USA), building AI healthcare applications. Azure AI-102 certified.`;
+    return `**IDENTITY MODULE**\n\nSaigovardhan R. Sasanapuri is a Full-Stack Developer and AI Engineer from VIT Pune (CGPA 9.02). He specializes in .NET, Azure AI, Python, and UI/UX. Currently interning at Connex AI (USA), building AI healthcare applications. Azure AI-102 certified.`;
   }
   if (q.includes("available") || q.includes("opport") || q.includes("open")) {
     return `STATUS: ● OPEN TO OPPORTUNITIES\n\nSaigovardhan is actively looking for full-time roles or internships in Full-Stack Development, AI Engineering, or UI/UX Design. Reach out at saigovardhan1304@gmail.com`;
@@ -586,6 +589,20 @@ chatInputEl.addEventListener("keydown", (e) => {
 // ── Project Terminals (Modal) ────────────────────────
 const projectDetails = [
   {
+    title: "PID::000 — /trafficai-enforcer",
+    body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
+<br><strong style="color:#00f0ff">TrafficAI Enforcement System</strong><br><br>
+<span style="color:#7ab8d4">Tech Stack:</span> YOLOv8, OpenCV, OCR, Python, Full-Stack Dashboard<br><br>
+A real-time traffic enforcement platform for motorcycle safety:<br>
+• Detects helmet absence, triple riding, and mobile phone usage via YOLOv8<br>
+• Tracks violations with OpenCV-based video analytics<br>
+• Extracts number plates and rider details using OCR<br>
+• Generates automated challans for enforcement workflows<br>
+• Includes admin monitoring and incident dashboard<br><br>
+<a href="https://github.com/saigovardhan1304/TrafficAI--Real-Time-AI-Traffic-Monitoring-Challan-System" target="_blank" class="t-cmd" style="text-decoration:none">▶ [VIEW_REPOSITORY]</a><br>
+<span style="color:#00ff88">STATUS: ● ACTIVE</span>`
+  },
+  {
     title: "PID::001 — /tuition-platform",
     body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
 <br><strong style="color:#00f0ff">Saigovardhan's Tuition Classes</strong><br><br>
@@ -627,6 +644,32 @@ A dynamic analytics platform for WhatsApp chats:<br>
 <span style="color:#00ff88">STATUS: ● LIVE</span>`
   },
   {
+    title: "PID::SEC — /tea-encryption",
+    body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
+<br><strong style="color:#00f0ff">Modified TEA Encryption Algorithm</strong><br><br>
+<span style="color:#7ab8d4">Tech Stack:</span> C++, Cryptography, Security<br><br>
+Enhanced security system implementing a modified Tiny Encryption Algorithm (TEA):<br>
+• Improved data protection for embedded systems<br>
+• Optimized encryption/decryption cycles<br>
+• Enhanced resistance against differential cryptanalysis<br>
+• Implemented as part of MPMC security research<br><br>
+<a href="https://github.com/saigovardhan1304/MPMC-Modified-TEA-Encryption-Algorithm-Project" target="_blank" class="t-cmd" style="text-decoration:none">▶ [VIEW_REPOSITORY]</a><br>
+<span style="color:#00ff88">STATUS: ● ACTIVE</span>`
+  },
+  {
+    title: "PID::RES — /lung-cancer-research",
+    body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
+<br><strong style="color:#00f0ff">3D CT Image Segmentation for Lung Cancer</strong><br><br>
+<span style="color:#7ab8d4">Tech Stack:</span> TensorFlow, 3D CT, Deep Learning, Medical Imaging<br><br>
+Advanced research in medical imaging and diagnostics:<br>
+• 3D CT image segmentation using deep learning<br>
+• Improved diagnostic accuracy and speed via TensorFlow<br>
+• Automated detection of lung nodules and cancer indicators<br>
+• Analyzed large-scale medical imaging datasets<br><br>
+<a href="https://drive.google.com/file/d/1rxuyzKkq8X4A0_2WbYISYUTTbn2fg1vT/view" target="_blank" class="t-cmd" style="text-decoration:none">▶ [VIEW_RESEARCH_PAPER]</a><br>
+<span style="color:#00ff88">STATUS: ● COMPLETED</span>`
+  },
+  {
     title: "HACKATHON — /medi-thon-file-system",
     body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
 <br><strong style="color:#b400ff">Medi-Thon Hospital File Transfer System</strong><br><br>
@@ -638,6 +681,7 @@ A secure healthcare file management system:<br>
 • Cryptographic techniques for data integrity<br>
 • Web-based interface for department staff<br>
 • Decryption system for authorized users only<br><br>
+<a href="https://github.com/saigovardhan1304/Medithon_Medicos/tree/copy" target="_blank" class="t-cmd" style="text-decoration:none">▶ [VIEW_REPOSITORY]</a><br>
 <span style="color:#ffcc00">★ HACKATHON PROJECT — MEDI-THON 2024</span>`
   }
 ];
