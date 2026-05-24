@@ -22,7 +22,7 @@ const RESUME = {
   location: "Pune, India",
   university: "Vellore Institute Of Technology (Chennai)",
   degree: "BTech CSE",
-  cgpa: "8.98",
+  cgpa: "9.02",
   duration: "2022–2026",
   roles: ["Full-Stack Developer", "AI Engineer", "UI/UX Designer", "Azure Certified", "Competitive Programmer"],
   links: {
@@ -43,6 +43,7 @@ const RESUME = {
     { company: "ThinkSmart Systems Pvt. Ltd.", role: "Software Developer Intern", period: "May 2025 – June 2025", desc: "Built RESTful APIs with ASP.NET Core. Integrated frontend/backend using C#, HTML/CSS, Oracle SQL, MVC.", stack: ["ASP.NET Core", "C#", "Oracle SQL"] }
   ],
   projects: [
+    { name: "TrafficAI Enforcement System", pid: "000", tech: "YOLOv8 | OpenCV | OCR | Python | Full-Stack", desc: "Real-time motorcycle traffic enforcement with helmet, triple-riding, and mobile phone violation detection, automated challans, and admin monitoring." },
     { name: "Saigovardhan's Tuition Classes", pid: "001", tech: ".NET | ASP.NET Core | C# | SQL Server", desc: "Full-stack educational platform with RESTful APIs and MVC architecture." },
     { name: "AI Speech Analyzer", pid: "002", tech: "Whisper | spaCy | Python | Flask | TTS", desc: "AI-powered speech analysis with fluency, grammar checks, and TTS games." },
     { name: "WhatsApp Convo Analyser", pid: "003", tech: "Python | Streamlit | NLP", desc: "Analyze WhatsApp chats for sentiment, activity, and behavioral insights." },
@@ -405,7 +406,7 @@ Available commands:
 
   whoami: () => `<div class="cli-response">
 uid=1304(saigovardhan) gid=vit(btechcse) groups=azure,dotnet,python,ml,uiux
-HOME=/portfolio  SHELL=/dev/brain  CGPA=8.98
+HOME=/portfolio  SHELL=/dev/brain  CGPA=9.02
 </div>`,
 
   about: () => `<div class="cli-response">
@@ -518,8 +519,8 @@ let chatbotOpen = false;
 const KNOWLEDGE = {
   skills: `Saigovardhan is skilled in C++, Java, Python, SQL, C#/.NET (languages), Azure AI, ASP.NET Core, Frontend Development, Machine Learning, Figma/UI/UX (technologies), and MongoDB, Power BI, Oracle SQL Server, Flask, Streamlit, Git/GitHub (tools).`,
   experience: `He has 2 internship experiences: (1) Frontend Developer & UX Designer at Connex AI, USA-Remote (Sept 2025–Present), building AI-driven healthcare apps with Figma and frontend dev. (2) Software Developer Intern at ThinkSmart Systems Pvt. Ltd., Pune (May 2025–June 2025), building RESTful APIs with ASP.NET Core, C#, and Oracle SQL.`,
-  projects: `He has several projects: (1) Saigovardhan's Tuition Classes (.NET, https://github.com/saigovardhan1304/Tuition-Classes). (2) AI Speech Analyzer (Python, https://github.com/saigovardhan1304/Clarity-Coach/tree/main). (3) WhatsApp Convo Analyser (Live: https://whatsappconvoanalyser.streamlit.app/). (4) TEA Encryption (C++, https://github.com/saigovardhan1304/MPMC-Modified-TEA-Encryption-Algorithm-Project). (5) Lung Cancer DL Research (TensorFlow, https://drive.google.com/file/d/1rxuyzKkq8X4A0_2WbYISYUTTbn2fg1vT/view). (6) Hospital File System (Hackathon, https://github.com/saigovardhan1304/Medithon_Medicos/tree/copy).`,
-  education: `He studies at Vellore Institute of Technology (Chennai), pursuing BTech in Computer Science Core with a CGPA of 8.98, graduating in 2026. His permanent location is Pune, India.`,
+  projects: `He has several applied AI and full-stack projects: (1) TrafficAI Enforcement System — real-time motorcycle violation detection with YOLOv8, OpenCV, OCR, automated challans, and admin monitoring. (2) Saigovardhan's Tuition Classes — full-stack .NET educational platform (https://github.com/saigovardhan1304/Tuition-Classes). (3) AI Speech Analyzer — uses Whisper, spaCy, Flask with fluency and grammar analysis (https://github.com/saigovardhan1304/Clarity-Coach/tree/main). (4) WhatsApp Convo Analyser — Streamlit chat analytics app (https://whatsappconvoanalyser.streamlit.app/). (5) TEA Encryption — modified cryptography research (https://github.com/saigovardhan1304/MPMC-Modified-TEA-Encryption-Algorithm-Project). (6) Lung Cancer DL Research — TensorFlow 3D CT segmentation (https://drive.google.com/file/d/1rxuyzKkq8X4A0_2WbYISYUTTbn2fg1vT/view). Plus a hackathon project: Medi-Thon Hospital File Transfer System (https://github.com/saigovardhan1304/Medithon_Medicos/tree/copy).`, 
+  education: `He studies at Vellore Institute of Technology (Chennai), pursuing BTech in Computer Science Core with a CGPA of 9.02, graduating in 2026. His permanent location is Pune, India.`,
   certifications: `He holds: Microsoft Azure AI Engineer Associate (AI-102), Full-Stack Web Development (Udemy), JP Morgan Chase Software Engineering Simulation, and Cyber Security Threat Landscape (LinkedIn). All certs are verified via his portfolio documents.`,
   contact: `LinkedIn: https://www.linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/ | GitHub: https://github.com/saigovardhan1304 | Email: saigovardhan1304@gmail.com`,
   socials: `LinkedIn: https://linkedin.com/in/saigovardhan-sasanapuri-8ab02b256/ | GitHub: https://github.com/saigovardhan1304`,
@@ -555,7 +556,7 @@ function getJarvisResponse(query) {
     return `Hello, Developer. I am SAI-BOT — Saigovardhan's AI portfolio assistant.\n\nAsk me about his skills, projects, experience, education, or certifications. I'm fully trained on his resume data. How can I assist?`;
   }
   if (q.includes("who") || q.includes("about") || q.includes("saigovar")) {
-    return `**IDENTITY MODULE**\n\nSaigovardhan R. Sasanapuri is a Full-Stack Developer and AI Engineer from VIT Chennai (CGPA 8.98). He specializes in .NET, Azure AI, Python, and UI/UX. Currently interning at Connex AI (USA), building AI healthcare applications. Azure AI-102 certified. He is permanently based in Pune, India.`;
+    return `**IDENTITY MODULE**\n\nSaigovardhan R. Sasanapuri is a Full-Stack Developer and AI Engineer from VIT Chennai (CGPA 9.02). He specializes in .NET, Azure AI, Python, and UI/UX. Currently interning at Connex AI (USA), building AI healthcare applications. Azure AI-102 certified. He is permanently based in Pune, India.`;
   }
   if (q.includes("available") || q.includes("opport") || q.includes("open")) {
     return `STATUS: ● OPEN TO OPPORTUNITIES\n\nSaigovardhan is actively looking for full-time roles or internships in Full-Stack Development, AI Engineering, or UI/UX Design. Reach out at saigovardhan1304@gmail.com`;
@@ -648,6 +649,20 @@ chatInputEl.addEventListener("keydown", (e) => {
 
 // ── Project Terminals (Modal) ────────────────────────
 const projectDetails = [
+  {
+    title: "PID::000 — /trafficai-enforcer",
+    body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
+<br><strong style="color:#00f0ff">TrafficAI Enforcement System</strong><br><br>
+<span style="color:#7ab8d4">Tech Stack:</span> YOLOv8, OpenCV, OCR, Python, Full-Stack Dashboard<br><br>
+A real-time traffic enforcement platform for motorcycle safety:<br>
+• Detects helmet absence, triple riding, and mobile phone usage via YOLOv8<br>
+• Tracks violations with OpenCV-based video analytics<br>
+• Extracts number plates and rider details using OCR<br>
+• Generates automated challans for enforcement workflows<br>
+• Includes admin monitoring and incident dashboard<br><br>
+<a href="https://github.com/saigovardhan1304/TrafficAI--Real-Time-AI-Traffic-Monitoring-Challan-System" target="_blank" class="t-cmd" style="text-decoration:none">▶ [VIEW_REPOSITORY]</a><br>
+<span style="color:#00ff88">STATUS: ● ACTIVE</span>`
+  },
   {
     title: "PID::001 — /tuition-platform",
     body: `<div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat README.md</span></div>
